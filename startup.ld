@@ -13,14 +13,19 @@ SECTIONS {
 
   .rodata : {
     * (.rodata*);
+    flash_start_data = .;
   } >FLASH
 
   .data : {
+    ram_start_data = .;
     * (.data*);
+    ram_end_data = .;
   } >RAM AT >FLASH
 
   .bss : {
+    start_bss = .;
     * (.bss*);
     * (COMMON);
+    end_bss = .;
   } >RAM
 }
