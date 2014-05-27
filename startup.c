@@ -3,6 +3,7 @@
 
 #define STACK_SIZE 1024
 uint32_t stack[STACK_SIZE];
+uint32_t SystemCoreClock = 16000000;
 
 extern uint32_t flash_start_data, ram_start_data, ram_end_data, start_bss, end_bss;
 

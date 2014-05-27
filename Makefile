@@ -11,7 +11,7 @@ all: image.bin
 flash: image.bin
 	@echo "reset halt\nflash write_image erase image.bin 0x08000000\nreset\nexit\n" | nc localhost 4444
 
-image.elf: startup.o main.o
+image.elf: startup.o main.o uart.o
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
 
 clean:
