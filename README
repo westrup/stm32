@@ -1,0 +1,12 @@
+toolchain: GNU Tools for ARM Embedded Processors
+* https://launchpad.net/gcc-arm-embedded
+
+jtag and flash: openocd 0.8:
+* http://openocd.sourceforge.net/
+$ openocd -f board/st_nucleo_f401re.cfg
+
+$ make flash
+
+$ arm-none-eabi-gdb -x gdb_cmds
+(gdb) monitor reset halt
+(gdb) continue
