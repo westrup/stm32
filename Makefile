@@ -1,5 +1,6 @@
 CC = arm-none-eabi-gcc
 CFLAGS = -g -std=c99 -nostdlib -nostdinc -mthumb -mcpu=cortex-m4
+CFLAGS += -I. -Idrivers/CMSIS/Include -Idrivers/CMSIS/Device/ST/STM32F4xx/Include
 LDFLAGS = -T startup.ld -Wl,--gc-sections
 
 .SECONDARY:
